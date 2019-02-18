@@ -33,6 +33,7 @@ use key and mouse to translate and rotate model :<br />
 >'W','A','S','D' : make the model translate up, left, down, right<br />
 >'F','N' : make the model translate far, near<br />
 >'Q','E' : make the model rotate along Z-axis<br />
+>'P' : save current window as preview image "preview.png"<br />
 >press left mouse button and drag : make the model rotate along X-axis and Y-axis<br />
 
 Sample
