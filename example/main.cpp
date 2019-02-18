@@ -1,6 +1,7 @@
 #include "Model.h"
 #include <GL/freeglut.h>
 #include <glm/gtc/type_ptr.hpp>
+#include <opencv2/opencv.hpp>
 #include <iostream>
 
 const char *vertexShaderSource = "\
@@ -243,7 +244,12 @@ void keyboard(unsigned char key, int, int) {
 		oldX = oldY = 0;
 	} else if (key == 'l' || key == 'L')
 		useLight = !useLight;
-	else
+	else if(key == 'p' || key == 'P') {
+		cv::Mat image(windowHeight, windowWidth, CV_8UC4);
+		glReadPixels(0, 0, windowWidth, windowHeight, GL_BGRA, GL_UNSIGNED_BYTE, image.data);
+		cv::flip(image, image, 0);
+		cv::imwrite("preview.png", image);
+	} else
 		return;
 	glutPostRedisplay();
 }
