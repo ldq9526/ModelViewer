@@ -9,9 +9,10 @@ class Mesh {
 private:
 	bool _exist;
 	bool _haveTexture;/* has texture or not */
-	GLuint _VAO_ID, _VBO_ID;/* array and buffer object ids */
-	unsigned int _vertexNum;/* vertices number */
+	GLuint _VAO_ID, _VBO_ID, _EBO_ID;/* array and buffer object ids */
+	unsigned int _vertexNum, _faceNum;/* vertices number */
 	GLfloat *_vertices, *_colors, *_normals, *_texCoords;
+	GLuint *_indices;
 	GLuint _texture;/* texture id */
 
 	/* initialize array and buffer objects */
